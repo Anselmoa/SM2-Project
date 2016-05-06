@@ -1,13 +1,20 @@
 "use strict";
-
 angular
 	.module('myApp', ['auth0', 'angular-storage', 'angular-jwt', 'ui.router'])
 
 /*============== Controllers ================*/
 
+.controller('homeCtrl', ['$scope', '$rootScope', function($scope, $rootScope){
+	$rootScope.inCourse = false;
+	console.log($scope.inCourse);
+}])
+
+
 // Controller to user.tpl.html (All Users)
-.controller('usersCtrl', ['$scope', '$http',
-	function($scope, $http) {
+.controller('usersCtrl', ['$scope', '$rootScope', '$http',
+	function($scope, $rootScope, $http ) {
+		$rootScope.inCourse = true;
+		console.log($rootScope.inCourse);
 		$http.get('http://localhost:3001/api/users')
 			.success(function(data, status, header, config) {
 				$scope.users = data;
@@ -90,7 +97,8 @@ angular
 	$stateProvider
 		.state("home", {
 			url: '/home',
-			templateUrl: 'public/tpl/home/home.tpl.html'
+			templateUrl: 'public/tpl/home/home.tpl.html',
+			controller: 'homeCtrl'
 		})
 		.state('users', {
 			url: '/users',

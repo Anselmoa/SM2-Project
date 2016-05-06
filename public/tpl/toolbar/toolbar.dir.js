@@ -29,19 +29,15 @@
 
 				// IF IS FIRSTLOGIN CREATE A PROFILE IN DB
 				if (profile.firstLogin) {
-					console.log('new user');
 					var newUser = {
 						userId: profile.identities[0].user_id,
 						nickname: profile.nickname,
 						isRegistedCourse: false
 					};
-					console.log(newUser);
 					// POST NEW USER
 					$http.post('http://localhost:3001/api/users', newUser)
 						.success(function(data, status, header, config) {
 							$scope.message = data.message;
-							console.log(data.userId);
-							console.log(newUser);
 						});
 				}
 				$location.path("/home");

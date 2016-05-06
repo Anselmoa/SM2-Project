@@ -1,35 +1,78 @@
-#loginForm
+@import url(https://fonts.googleapis.com/css?family=Lato);
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak
 {
-    width: 400px;
-    height: 30px;
-    margin-top: 40px;
-    padding-top: 5px;
-
-    border: 1px solid black;
-    border-radius: 30px;
+    display: none !important;
 }
 
-.loginText
+*
 {
-    font-size: 30px;
-
-    margin-left: 5px !important;
-
-    color: black;
+    font-family: 'Lato', sans-serif;
 }
 
-#navlogo
+.top_wrapper
 {
-    margin-left: 20px;
-}
+    height: 600px;
 
-.profileA
-{
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    color: white;
+    background-image: linear-gradient(315deg, rgb(62, 80, 98) 10%, rgb(32, 48, 64) 90%);
+    .indexContainer
+    {
+        padding-top: 0;
+
+        background: transparent !important;
+        h1
+        {
+            margin-bottom: 30px;
+        }
+        #myslider
+        {
+            width: 550px;
+            height: 350px;
+            margin-left: 25%;
+            img
+            {
+                width: 550px;
+                height: 350px;
+            }
+        }
+    }
 }
-nav
+.navbar
 {
+    #navlogo
+    {
+        width: 70px;
+        height: 50px;
+        margin-top: 8px;
+        margin-left: 50px;
+        padding-bottom: 8px;
+
+        background-image: url('/style/images/Background.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 90px 70px;
+    }
+    .navbar-brand
+    {
+        padding: 0;
+    }
+    .container
+    {
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .profileToolbar
+    {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
     li
     {
         cursor: pointer;
@@ -38,7 +81,86 @@ nav
     {
         width: 50px;
         height: 50px;
+        margin-right: 7px;
 
         border-radius: 30px;
+    }
+    .nav
+    {
+        font-size: 12px;
+
+        padding-top: 8px;
+        padding-bottom: 8px;
+        .signin
+        {
+            margin-top: 7px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+
+            text-transform: uppercase;
+
+            border: 1px solid white;
+            border-radius: 50px;
+        }
+    }
+    .open
+    {
+        a
+        {
+            background-color: transparent !important;
+        }
+    }
+    .dropdown-menu
+    {
+        margin-top: 7px !important;
+
+        opacity: .9;
+        border-radius: 10px;
+        background-color: white;
+        li
+        {
+            &:hover
+            {
+                background-color: #d3d3d3;
+            }
+        }
+    }
+}
+.navbar.main
+{
+    margin-bottom: 0;
+    padding-top: 8px;
+
+    border-bottom: none;
+    background-color: transparent;
+}
+
+
+@media only screen and (max-width : 992px)
+{
+    .top_wrapper
+    {
+        height: 452px;
+        .indexContainer
+        {
+            padding: 0;
+            h1
+            {
+                font-size: 50px;
+
+                color: white;
+            }
+            #myslider
+            {
+                width: 400px;
+                height: 250px;
+                margin-left: 22%;
+                img
+                {
+                    width: 400px;
+                    height: 250px;
+                }
+            }
+        }
     }
 }
