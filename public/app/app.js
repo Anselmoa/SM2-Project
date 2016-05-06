@@ -45,6 +45,21 @@ angular
 	}])
 
 
+	.controller('userRegisterCourse', ['$scope', '$http', '$location', '$stateParams', function ($scope, $http, $location, $stateParams) {
+
+		var updatedUser = {
+			isRegisterCourse: true
+		};
+		console.log($scope.profile.identities[0].user_id);
+
+			$http.put('http://localhost:3001/api/users/' +  $scope.profile.identities[0].user_id, updatedUser)
+				.success(function (data,status, header, config) {
+					console.log(updatedUser);
+					$location.path('/users');
+				})
+	}])
+
+
 
 	/*============== Config ================*/
 	.config(function($provide, authProvider, $urlRouterProvider, $stateProvider, $httpProvider, jwtInterceptorProvider) {
@@ -82,6 +97,11 @@ angular
 				url: '/user_remove/:id',
 				template: 'ok',
 				controller: 'userRemoveCtrl'
+			})
+			.state('registerUser', {
+				url: '/user_register/:id',
+				template: 'Updated',
+				controller: 'userRegisterCourse'
 			})
 
 		function redirect($q, $injector, auth, store, $location) {

@@ -62,19 +62,10 @@ module.exports.init = function() {
 
 	// PUT UPDATE ONE ITEM http://localhost:3001/api/users/:user_id
 	routerApi.put('/users/:user_id', function (req,res) {
-
-		User.findById(req.params.user_id, function (err, user) {
-			if (err) {res.send(err);}
-			user.id = req.body.id;
-			user.profileName = req.body.profileName;
-			user.isRegisted = req.body.isRegisted;
-
-			user.save(function (err) {
-				if (err) {res.send(err);}
-				res.json({
-					message: 'user updated!'
-				});
-			});
+		console.log(req.params);
+		User.findOneAndUpdate({ userId: req.params.user_id}, {isRegistedCourse: req.body.isRegistedCourse}, { new: false}, function (err, user) {
+			if (err) throw err;
+			console.log(user);
 
 		});
 

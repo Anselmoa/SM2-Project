@@ -21,8 +21,6 @@
 		vm.auth = auth;
 		vm.profile = store.get('profile');
 
-
-
 		function login() {
 			auth.signin({}, function(profile, token, e) {
 				store.set('id_token', token);
