@@ -1,0 +1,10 @@
+/**
+
+	TODO:
+	- 1: Create the put function on routes
+	- 2: Apply to Course Button update the isRegisterCourse value
+	- 3: Create a course page with a button and restrict the access to only authenticated users (maybe with ng-if)(or use the variable isRegisterCourse)
+	- 4: Only users that are register on the course can see the content, if not show course homepage with the register button
+	- 5:
+
+ */

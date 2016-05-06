@@ -1,0 +1,36 @@
+
+<nav>
+	<a href="#/user_new" type="button" class="btn btn-success">Add new</a>
+	<a href="#/user_new" type="button" class="btn btn-success">Apply to Course</a>
+</nav>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Articles</h3>
+	</div>
+	<div class="panel-body">
+
+		<table class="table table-condensed">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Name</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="user in users">
+					<td>{{user._id}}</td>
+					<td>{{user.profileName}}</td>
+					<td>
+						<span class="pull-right">
+							<a href="#/user/{{user._id}}" type="button" class="btn btn-success btn-sm">details</a>
+							<a href="#/user_remove/{{user._id}}" type="button" class="btn btn-danger btn-sm">remove</a>
+						</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</div>

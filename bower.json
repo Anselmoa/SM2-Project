@@ -1,0 +1,26 @@
+{
+  "name": "sm2-project",
+  "description": "Project of SM2",
+  "main": "app.js",
+  "authors": [
+    "Anselmo <fabioanselmo1994@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "auth0-angular": "^4.1.0",
+    "jquery": "^2.2.3",
+    "angular-jwt": "^0.0.9",
+    "passport": "^0.3.2",
+    "Materialize": "materialize#^0.97.6",
+    "angular-storage": "^0.5.0",
+    "angular-ui-router": "^0.2.18"
+  }
+}

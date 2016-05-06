@@ -1,0 +1,20 @@
+{
+  "name": "sm2projectserver",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "express-jwt": "^3.3.0",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.4.14"
+  },
+  "devDependencies": {},
+  "description": ""
+}

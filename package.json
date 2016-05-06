@@ -1,0 +1,25 @@
+{
+  "name": "sm2-project",
+  "version": "1.0.0",
+  "description": "Project of SM2",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "angular-aria": "^1.5.5",
+    "angular-jwt": "^0.0.9",
+    "angular-local-storage": "^0.2.7",
+    "angular-storage": "^0.0.15",
+    "angular-ui-router": "^0.2.18",
+    "body-parser": "^1.15.0",
+    "bootstrap": "^3.3.6",
+    "express-jwt": "^3.3.0",
+    "method-override": "^2.3.5"
+  },
+  "devDependencies": {}
+}
