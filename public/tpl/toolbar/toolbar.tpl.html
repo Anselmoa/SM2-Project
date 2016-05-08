@@ -14,7 +14,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a class="signin" data-ng-click="toolbar.login()" data-ng-if="!toolbar.auth.isAuthenticated">SIGN IN</a></li>
         <li><a href="#/about" data-ng-if="!toolbar.auth.isAuthenticated">ABOUT</a></li>
-        <li><a href="#/users" data-ng-if="toolbar.auth.isAuthenticated">COURSES</a></li>
+        <li><a href="#/courses" data-ng-if="toolbar.auth.isAuthenticated">COURSES</a></li>
         <li class="dropdown">
 	          <a class="dropdown-toggle profileToolbar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-ng-if="toolbar.auth.isAuthenticated">
 	          <img ng-src="{{profile.picture}}">

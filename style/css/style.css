@@ -12,8 +12,13 @@
   font-family: 'Lato', sans-serif;
 }
 
+html {
+  height: 100% !important;
+}
+
 .top_wrapper {
-  height: 600px;
+  height: 80px;
+  margin-bottom: 20px;
   color: white;
   background-image: linear-gradient(315deg, #3e5062 10%, #203040 90%);
 }
@@ -24,18 +29,16 @@
 }
 
 .top_wrapper .indexContainer h1 {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
-.top_wrapper .indexContainer #myslider {
-  width: 550px;
-  height: 350px;
-  margin-left: 25%;
+.top_wrapper .indexContainer img {
+  width: 500px;
+  height: 300px;
 }
 
-.top_wrapper .indexContainer #myslider img {
-  width: 550px;
-  height: 350px;
+.top_wrapper_home {
+  height: 590px !important;
 }
 
 .navbar #navlogo {
@@ -114,24 +117,82 @@
   background-color: transparent;
 }
 
-@media only screen and (max-width: 992px) {
+#article {
+  margin-bottom: 30px;
+}
+
+#article .text-muted {
+  margin-top: 10px;
+}
+
+#article .articleDescription {
+  padding-top: 80px;
+}
+
+#startButtonCourse {
+  margin-bottom: 30px;
+}
+
+.bottom {
+  text-align: center;
+  background-color: #373737;
+}
+
+.bottom .container {
+  min-height: 150px;
+  background-color: #373737;
+}
+
+.bottom .container h3 {
+  color: #999;
+}
+
+.bottom .container p {
+  color: #666;
+}
+
+footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 130px;
+}
+
+@media only screen and (max-width: 1400px) {
   .top_wrapper {
-    height: 452px;
+    height: 80px;
   }
   .top_wrapper .indexContainer {
     padding: 0;
   }
   .top_wrapper .indexContainer h1 {
     font-size: 50px;
+    margin-bottom: 20px;
     color: white;
   }
-  .top_wrapper .indexContainer #myslider {
+  .top_wrapper .indexContainer img {
     width: 400px;
     height: 250px;
-    margin-left: 22%;
   }
-  .top_wrapper .indexContainer #myslider img {
-    width: 400px;
-    height: 250px;
+  .top_wrapper_home {
+    height: 452px !important;
+  }
+  .dropdown-menu {
+    margin-right: 20px !important;
+  }
+  footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 275px;
   }
 }

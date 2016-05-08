@@ -1,0 +1,24 @@
+<div class="row" ng-if="!isRegistedCourse">
+    <div class="col-sm-3 col-sm-offset-1">
+        <button type="button" class="btn btn-primary" ng-click="registerOnCourse()">Register on the Course</button>
+    </div>
+</div>
+<div class="row" id="article">
+    <div class="col-sm-4 col-sm-offset-1">
+        <h3 class="title">CSS for Beginners</h3>
+        <a href="" class=""><img src="style/images/cssCourse.png" class="img-responsive"></a>
+        <p class="text-muted"><span class="glyphicon glyphicon-lock"></span> Available to Register Members</p>
+    </div>
+    <div class="col-sm-6 articleDescription">
+        <p>Cascading Style Sheets (CSS) are the main coding files used to lay out a website and its design. CSS3 is the latest in styling standards, and it brings several new properties and declarations you can use to make your website design more easily created. CSS is currently the only standard in website design that plugs directly into your HTML, even the latest HTML5 standards. With CSS3 and HTML5, you can create the latest interactive pages for your website viewers.</p>
+        <p>
+            This course shows you how to design web pages and create CSS classes from a beginner's level to a more intermediate level. It starts off with basic HTML declarations, properties, values and how to include a CSS style sheet with your HTML code. For those of you who are new to CSS and HTML, we show you step-by-step how to create a CSS file and include it in your HTML code, even if you use a cloud server for your hosting.</p>
+        <p class="text-muted">Presented by <a href="#">Fabio Anselmo</a></p>
+    </div>
+</div>
+
+<div class="row" id="startButtonCourse" ng-if="isRegistedCourse">
+	<div class="col-sm-3 col-sm-offset-1">
+		<button type="button" class="btn btn-primary" >Start the Course</button>
+	</div>
+</div>

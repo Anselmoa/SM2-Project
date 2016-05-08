@@ -40,25 +40,15 @@ module.exports.init = function() {
 		});
 	});
 
-	// GET ALL ITEMS http://localhost:8080/api/articles
-	routerApi.get('/users', function(req, res) {
-		User.find(function(err, user) {
-			if (err) {
-				res.send(err);
-			}
-			res.json('Need to be logged to see users');
-		});
-	});
 
 	// GET ONE ITEM http://localhost:3001/api/users/:user_id
 	routerApi.get('/users/:user_id', function(req, res) {
-		User.findById(req.params.user_id, function(err, user) {
-
-			if (err) {
-				res.send(err);
-			}
-			res.json(user);
-		});
+		 if (req.params.user_id) {
+        User.find({ 'userId': req.params.user_id }, function (err, user) {
+            res.json(user);
+            console.log(user);
+        });
+        }
 
 	});
 

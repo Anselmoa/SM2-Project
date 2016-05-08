@@ -11,4 +11,4 @@ module.exports.initDb = function() {
 			console.log('Succeeded connected to: ' + url);
 		}
 	});
-}
+};

@@ -1,57 +1,60 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
-	<!-- Compiled and minified CSS -->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="style/css/style.css">
-	<link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title>SM2 Project</title>
-	<!-- Compiled and minified JavaScript -->
-	<body>
-		<div class="wrapper">
-			<div class="top_wrapper">
-				<toolbar></toolbar>
-				<div class="jumbotron text-center indexContainer" ng-show="!inCourse">
-					<div class="container">
-						<h1>Courses</h1>
-						<div id="myslider" data-ng-cloak>
-							<img src="style/images/cssCourse.png"/>
-							<img src="style/images/htmlCourse.jpg"/>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- NavBar Content -->
-		<ui-view></ui-view>
-		<script src="node_modules/angular/angular.js"></script>
-		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-		<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="packages/SimpleSlider-master/dist/simpleslider.js"></script>
-		<script src="//cdn.auth0.com/w2/auth0-angular-4.js"> </script>
-		<script src="node_modules/auth0-angular/build/auth0-angular.js"></script>
-		<script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
-		<script src="node_modules/angular-local-storage/src/angular-local-storage.js"></script>
-		<script src="node_modules/angular-jwt/dist/angular-jwt.js"></script>
-		<script src="node_modules/angular-storage/dist/angular-storage.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-sanitize.min.js"></script>
-		<script src="public/app/app.js"></script>
-		<script src="public/tpl/toolbar/toolbar.dir.js"></script>
-		<!-- Auth0 Lock script and AngularJS module -->
-		<script src="//cdn.auth0.com/js/lock-9.1.min.js"></script>
-		<script>
-		var imgSlider = new SimpleSlider(
-		document.getElementById('myslider'),
-		{
-		autoPlay: true,
-		transitionProperty:'left',
-		startValue:'-612px',
-		visibleValue:'0px',
-		endValue:'612px',
-		transitionDelay: 3,
-		transitionDuration: 1
-		}
-		);
-		</script>
-	</body>
+<!-- Compiled and minified CSS -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="style/css/style.css">
+<link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>SM2 Project</title>
+<!-- Compiled and minified JavaScript -->
+
+<body ng-cloak>
+    <div class="wrapper">
+        <div id="top_wrapper" class="top_wrapper" ng-class="{top_wrapper_home:
+        location === '/home'}">
+            <toolbar></toolbar>
+            <div class="jumbotron text-center indexContainer" ng-if="location === '/home'">
+                <div class="container">
+                    <h1>Courses</h1>
+                    <img src="style/images/cssCourse.png" />
+                </div>
+            </div>
+        </div>
+        <!-- NavBar Content -->
+        <ui-view></ui-view>
+        <footer class="bottom">
+            <div class="container">
+                <div class="col-md-4">
+                    <h3>COMPANY</h3>
+                    <p ng-href="#/about">About Us</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>CONTACT</h3>
+                    <p ng-href="#">fabioanselmo1994@gmail.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>ADDRESS</h3>
+                    <p>Lisbon</p>
+                    <p>Something Street 1234-123</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="//cdn.auth0.com/w2/auth0-angular-4.js">
+    </script>
+    <script src="node_modules/auth0-angular/build/auth0-angular.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="node_modules/angular-local-storage/src/angular-local-storage.js"></script>
+    <script src="node_modules/angular-jwt/dist/angular-jwt.js"></script>
+    <script src="node_modules/angular-storage/dist/angular-storage.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-sanitize.min.js"></script>
+    <script src="public/app/app.js"></script>
+    <script src="public/tpl/toolbar/toolbar.dir.js"></script>
+    <!-- Auth0 Lock script and AngularJS module -->
+    <script src="//cdn.auth0.com/js/lock-9.1.min.js"></script>
+</body>
+
 </html>
