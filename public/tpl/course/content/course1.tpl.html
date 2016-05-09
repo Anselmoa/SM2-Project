@@ -1,0 +1,81 @@
+<div class="row">
+    <div class="col-md-3 col-md-offset-2">
+        <h1>Applying CSS</h1>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-6 col-md-offset-2">
+        <p>There are three ways to apply CSS to HTML: In-line, internal and external.</p>
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col-md-6 col-md-offset-2">
+        <h2>In-line</h2>
+        <br>
+        <p>In-line style are applied straight into the HTML tags using the <span class="red">style</span> attribute.</p>
+        <p><i><u>Example:</u></i></p>
+        <pre><i>&lt;p style="color: red"&gt;text&lt;/p&gt;</i></pre>
+        <p>On the example above the paragraph will be red. Even if this is an option, the best practice is to put all the CSS in a separate file just with CSS content.</p>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-6 col-md-offset-2">
+        <h2>Internal</h2>
+        <br>
+        <p>Internal is used inside the head element of the HTML, which the CSS content must be inside de <span class="red">style</span> tags.</p>
+        <p><i><u>Example:</u></i></p>
+        <pre>
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+        &lt;title&gt;CSS Example&lt;/title&gt;
+        &lt;style&gt;
+         p {
+          color: red;
+         }
+         a {
+          color: blue;
+         }
+        &lt;/style&gt;
+        </pre>
+        <p>This is going to make all paragraph inside the current page to be red and the anchors to be blue. </p>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-6 col-md-offset-2">
+        <h2>External</h2>
+        <br>
+        <p>External styles are used for all the pages of the website. Which goes to a separate CSS file, that looks something like this:</p>
+        <p><i><u>Example:</u></i></p>
+        <pre>
+        p {
+        color: red;
+        }
+        a {
+        color: blue;
+        }
+        </pre>
+        <p>If this file is saved as “style.css” in the same directory as your HTML page, then it can be linked to in the HTML like this:</p>
+        <pre>
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+        &lt;title&gt;CSS Example&lt;/title&gt;
+        &lt;link rel="stylesheet" href="style.css"&gt;
+        ...
+        </pre>
+    </div>
+</div>
+<div class="row links">
+	<div class="col-sm-3 col-sm-offset-2">
+		<p><strong>Previous Page: </strong> <a href="#/course1">Applying CSS</a></p>
+	</div>
+	<div class="col-sm-3 col-sm-offset-1">
+		<p><strong>Next Page: </strong> <a href="#/course2">Selectors, Properties, and Values</a></p>
+	</div>
+</div>

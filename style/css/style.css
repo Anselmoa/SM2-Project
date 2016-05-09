@@ -16,8 +16,11 @@ html {
   height: 100% !important;
 }
 
+.uiView {
+  min-height: 700px;
+}
+
 .top_wrapper {
-  height: 80px;
   margin-bottom: 20px;
   color: white;
   background-image: linear-gradient(315deg, #3e5062 10%, #203040 90%);
@@ -100,7 +103,6 @@ html {
 }
 
 .navbar .dropdown-menu {
-  margin-top: 7px !important;
   opacity: .9;
   border-radius: 10px;
   background-color: white;
@@ -155,7 +157,69 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 130px;
+  height: 150px;
+}
+
+.profileContent {
+  width: 1000px;
+  margin-top: 50px;
+  margin-left: 24% !important;
+  padding: 20px !important;
+  border: 1px solid black;
+  border-radius: 30px;
+}
+
+.profileContent .profilePicture {
+  width: 150px;
+  height: 150px;
+}
+
+.row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.aboutTitle {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.aboutTitle h1 {
+  font-size: 45px;
+}
+
+.aboutTitle img {
+  width: 200px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: -15px;
+}
+
+.aboutTitle p {
+  margin-left: -17px;
+}
+
+.aboutTitle h4 {
+  margin-left: -17px;
+}
+
+.aboutDescription {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.NextPage1 {
+  margin-top: 300px;
+  margin-bottom: 15px;
+}
+
+.red {
+  color: red;
+}
+
+.links {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 1400px) {
@@ -174,11 +238,18 @@ footer {
     width: 400px;
     height: 250px;
   }
+  .NextPage1 {
+    margin-top: 300px;
+    margin-bottom: -150px;
+  }
   .top_wrapper_home {
     height: 452px !important;
   }
   .dropdown-menu {
-    margin-right: 20px !important;
+    margin-right: 8px !important;
+  }
+  .profileContent {
+    margin-left: 13% !important;
   }
   footer {
     bottom: 0;

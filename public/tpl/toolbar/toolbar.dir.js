@@ -26,6 +26,7 @@
                 store.set('id_token', token);
                 store.set('profile', profile);
                 $rootScope.profile = profile;
+                $rootScope.logged = true;
 
 
 
@@ -61,11 +62,11 @@
             store.remove('isRegistedCourse');
             $rootScope.profile = '';
             $rootScope.isRegistedCourse = '';
+            $rootScope.logged = false;
             auth.signout();
             $location.path("/home");
         }
     }
-
 
 
 })();

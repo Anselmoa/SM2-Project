@@ -11,56 +11,16 @@ angular
 
 
 // Controller to user.tpl.html (All Users)
-.controller('usersCtrl', ['$scope', '$rootScope', '$http',
-    function($scope, $rootScope, $http) {
-        console.log($rootScope.inCourse);
-        $http.get('http://localhost:3001/api/users')
-            .success(function(data, status, header, config) {
-                $scope.users = data;
-                console.log(data);
-            });
-    }
-])
+.controller('profileCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location) {
+    $rootScope.location = $location.path();
+    $http.get('http://localhost:3001/api/users/' + $rootScope.profile.identities[0].user_id)
+        .success(function(data, status, header, config) {
+            $scope.userPicture = $rootScope.profile.picture;
+            $scope.userNickname = $rootScope.profile.nickname;
+            $scope.userEmail = $rootScope.profile.email;
+        })
+}])
 
-// Controller to user_new.tpl.html (Create a user)
-.controller('userNewCtrl', ['$scope', '$http',
-        function($scope, $http) {
-            $scope.submit = function() {
-
-                var newUser = {
-                    profileName: $scope.profileName
-                };
-
-                $http.post('http://localhost:3001/api/users', newUser)
-                    .success(function(data, status, header, config) {
-                        $scope.message = data.message;
-                        console.log(data);
-                        console.log(header);
-                        console.log(config);
-                    });
-
-                $scope.profileName = '';
-            }
-        }
-    ]) // end Controller to user_new.tpl.html (Create a user)
-
-
-.controller('userRemoveCtrl', ['$scope', '$http', '$location', '$stateParams',
-    function($scope, $http, $location, $stateParams) {
-
-        $http.delete('http://localhost:3001/api/users/' + $stateParams.id)
-            .success(function(data, status, header, config) {
-                $location.path('/users');
-            })
-    }
-])
-
-
-.controller('userRegisterCourseCtrl', ['$scope', '$http', '$location', '$stateParams',
-    function($scope, $http, $location, $stateParams) {
-
-    }
-])
 
 .controller('coursesCtrl', ['$rootScope', '$location', '$http', 'store', function($rootScope, $location, $http, store) {
     $rootScope.location = $location.path();
@@ -80,7 +40,7 @@ angular
                         console.log(data[0].isRegistedCourse);
                         console.log(config);
                     })
-               })
+            })
             .error(function(data, status, headers, config) {
                 // data is always undefined here when there is an error
                 console.error('Error fetching feed:', data);
@@ -89,6 +49,12 @@ angular
     }
 }])
 
+.controller('aboutCtrl', ['$scope', '$location', '$rootScope', function($scope, $location, $rootScope) {
+    $rootScope.location = $location.path();
+}])
+.controller('courseIntroCtrl', ['$scope', '$location', '$rootScope', function($scope, $location, $rootScope) {
+    $rootScope.location = $location.path();
+}])
 
 
 /*============== Config ================*/
@@ -106,38 +72,44 @@ angular
         };
 
         /*============== Routes and Redirect(erro) ================*/
-        $urlRouterProvider.otherwise('/users');
 
         $stateProvider
             .state("home", {
                 url: '/home',
                 templateUrl: 'public/tpl/home/home.tpl.html',
-                controller: 'homeCtrl'
+                controller: 'homeCtrl',
+                authenticate: false
             })
-            .state('users', {
-                url: '/users',
-                templateUrl: 'public/tpl/users/users.tpl.html',
-                controller: 'usersCtrl'
-            })
-            .state('newUser', {
-                url: '/user_new',
-                templateUrl: 'public/tpl/user_new/user_new.tpl.html',
-                controller: 'userNewCtrl'
-            })
-            .state('removeUser', {
-                url: '/user_remove/:id',
-                template: 'ok',
-                controller: 'userRemoveCtrl'
-            })
-            .state('registerUser', {
-                url: '/user_register/:id',
-                template: 'Updated',
-                controller: 'userRegisterCourseCtrl'
-            })
+
             .state('courses', {
                 url: '/courses',
-                templateUrl: 'public/tpl/courses/courses.tpl.html',
-                controller: 'coursesCtrl'
+                templateUrl: 'public/tpl/course/coursesHomePage.tpl.html',
+                controller: 'coursesCtrl',
+                authenticate: true
+            })
+            .state('profile', {
+                url: '/profile',
+                templateUrl: 'public/tpl/profile/profile.tpl.html',
+                controller: 'profileCtrl',
+                authenticate: true
+            })
+            .state('about', {
+                url: '/about',
+                templateUrl: 'public/tpl/about/about.tpl.html',
+                controller: 'aboutCtrl',
+                authenticate: false
+            })
+            .state('courseIntro', {
+                url: '/courseintro',
+                templateUrl: 'public/tpl/course/content/courseIntro.tpl.html',
+                controller: 'courseIntroCtrl',
+                authenticate: true
+            })
+            .state('course1', {
+                url: '/course1',
+                templateUrl: 'public/tpl/course/content/course1.tpl.html',
+                controller: 'courseIntroCtrl',
+                authenticate: true
             })
 
         function redirect($q, $injector, auth, store, $location) {
@@ -164,21 +136,28 @@ angular
 
 /*============== On refresh  ================*/
 //Check if the toke accepted and is not Expired and the user is Authenticated
-.run(function($rootScope, auth, store, jwtHelper, $location) {
+.run(function($rootScope, auth, store, jwtHelper, $location, $state) {
     $rootScope.$on('$locationChangeStart', function() {
         var token = store.get('id_token');
         var profile = store.get('profile');
-   	  var isRegistedCourse = store.get('isRegistedCourse');
+        var isRegistedCourse = store.get('isRegistedCourse');
         if (token) {
             if (!jwtHelper.isTokenExpired(token)) {
                 if (!auth.isAuthenticated) {
-                  auth.authenticate(store.get('profile'), token);
-        				$rootScope.profile = profile;
-        				$rootScope.isRegistedCourse = isRegistedCourse;
+                    auth.authenticate(store.get('profile'), token);
+                    $rootScope.profile = profile;
+                    $rootScope.isRegistedCourse = isRegistedCourse;
                 }
             }
-        } else {
-            $location.path('/home');
+        }
+    });
+
+    $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {
+        if (toState.authenticate && !auth.isAuthenticated) {
+            // User isn’t authenticated
+            $state.transitionTo("home");
+            alert('Need to be Logged!');
+            event.preventDefault();
         }
     });
 

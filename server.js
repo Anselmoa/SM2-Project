@@ -19,8 +19,7 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/public'));
 
-app.use('/api', require('./server/user/route').init());
-
+app.use('/api', authCheck, require('./server/user/route').init());
 
 app.listen(3001);
 console.log("Listening 3001");
