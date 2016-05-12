@@ -1,0 +1,51 @@
+<div class="row">
+	<div class="col-sm-5 col-sm-offset-2">
+		<h1>Exercises about Applying CSS</h1>
+	</div>
+</div>
+<br>
+<br>
+<div class="row course1Question1">
+	<div class="col-sm-9 col-sm-offset-2">
+		<h3>Question 1:
+		<span class="glyphicon glyphicon-ok green" ng-show="question1T"></span>
+		<span class="glyphicon glyphicon-remove red" ng-show="!question1T"></span>
+		</h3>
+		<br>
+		<h5>How many types are to apply CSS?</h5><br>
+		<label><input type="checkbox" name="question1" ng-true-value="true" ng-false-value="false" ng-model='question1.answer1'></input>1</label><br>
+		<label><input type="checkbox" name="question1" ng-true-value="true" ng-false-value="false" ng-model='question1.answer2'></input>2</label><br>
+		<label><input type="checkbox" name="question1" ng-true-value="true" ng-false-value="false" ng-model='question1.answer3'></input>3</label><br>
+		<label><input type="checkbox" name="question1" ng-true-value="true" ng-false-value="false" ng-model='question1.answer4'></input>4</label><br>
+		{{question1T}}
+	</div>
+</div>
+<br>
+<div class="row course1Question2">
+	<div class="col-sm-3 col-sm-offset-2">
+		<h3>Question 2:
+		<span class="glyphicon glyphicon-ok green" ng-show="question2T"></span>
+		<span class="glyphicon glyphicon-remove red" ng-show="!question2T"></span>
+		</h3>
+		<br>
+		<h5>Which type are those?</h5><br>
+		<label><input type="checkbox" name="question2" ng-true-value="true" ng-false-value="false" ng-model='question2.answer1'></input>In-line</label><br>
+		<label><input type="checkbox" name="question2" ng-true-value="true" ng-false-value="false" ng-model='question2.answer2'></input>Internal</label><br>
+		<label><input type="checkbox" name="question2" ng-true-value="true" ng-false-value="false" ng-model='question2.answer3'></input>External</label><br>
+		<label><input type="checkbox" name="question2" ng-true-value="1" ng-false-value="0" ng-model='question2.answer4'></input>Outside</label><br>
+	</div>
+</div>
+<br><br><br>
+<div class="row">
+	<div class="col-sm-2 col-sm-offset-2">
+		<button class="btn btn-primary" ng-click="submitExercise1()">Submit</button>
+	</div>
+</div>
+<div class="row links course1ExercisesLink">
+	<div class="col-sm-3 col-sm-offset-2">
+		<p><strong>Previous Page: </strong> <a href="#/course1">Applying CSS</a></p>
+	</div>
+	<div class="col-sm-3 col-sm-offset-1" ng-if="next">
+		<p><strong>Next Page: </strong> <a href="#/course1Exercises">Exercises about Applying CSS</a></p>
+	</div>
+</div>
