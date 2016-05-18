@@ -7,7 +7,7 @@
 
     function toolbar() {
         return {
-            templateUrl: " public/tpl/toolbar/toolbar.tpl.html",
+            templateUrl: "/tpl/toolbar/toolbar.tpl.html",
             controller: toolbarController,
             controllerAs: 'toolbar'
         }
@@ -38,12 +38,12 @@
                         isRegistedCourse: false
                     };
                     // POST NEW USER
-                    $http.post('http://localhost:3001/api/users', newUser)
+                    $http.post('/api/users', newUser)
                         .success(function(data, status, header, config) {
                             $scope.message = data.message;
                         });
                 }
-                $http.get('http://localhost:3001/api/users/' + profile.identities[0].user_id)
+                $http.get('/api/users/' + profile.identities[0].user_id)
                     .success(function(data, status, header, config) {
                         store.set('isRegistedCourse', data[0].isRegistedCourse);
                         $rootScope.isRegistedCourse = store.get('isRegistedCourse');

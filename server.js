@@ -18,8 +18,15 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/public'));
+app.use("/node_modules" ,express.static(__dirname + '/node_modules'));
+app.use('/bower_components',express.static(__dirname + '/bower_components'));
 
 app.use('/api', authCheck, require('./server/user/route').init());
+
+app.get('/', function (req, res) {
+		console.log('hello');
+		res.sendFile('/index.html');
+})
 
 app.listen((process.env.PORT || 3001), function(){
   console.log('listening on *:5000');

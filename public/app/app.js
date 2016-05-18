@@ -135,43 +135,43 @@ angular
     $stateProvider
         .state("home", {
             url: '/home',
-            templateUrl: 'public/tpl/home/home.tpl.html',
+            templateUrl: '/tpl/home/home.tpl.html',
             controller: 'homeCtrl',
             authenticate: false
         })
         .state('courses', {
             url: '/courses',
-            templateUrl: 'public/tpl/course/coursesHomePage.tpl.html',
+            templateUrl: '/tpl/course/coursesHomePage.tpl.html',
             controller: 'coursesCtrl',
             authenticate: true
         })
         .state('profile', {
             url: '/profile',
-            templateUrl: 'public/tpl/profile/profile.tpl.html',
+            templateUrl: '/tpl/profile/profile.tpl.html',
             controller: 'profileCtrl',
             authenticate: true
         })
         .state('about', {
             url: '/about',
-            templateUrl: 'public/tpl/about/about.tpl.html',
+            templateUrl: '/tpl/about/about.tpl.html',
             controller: 'aboutCtrl',
             authenticate: false
         })
         .state('courseIntro', {
             url: '/courseintro',
-            templateUrl: 'public/tpl/course/content/courseIntro.tpl.html',
+            templateUrl: '/tpl/course/content/courseIntro.tpl.html',
             controller: 'courseIntroCtrl',
             authenticate: true
         })
         .state('course1', {
             url: '/course1',
-            templateUrl: 'public/tpl/course/content/course1/course1.tpl.html',
+            templateUrl: '/tpl/course/content/course1/course1.tpl.html',
             controller: 'courseIntroCtrl',
             authenticate: true
         })
         .state('course1Exercises', {
             url: '/course1Exercises',
-            templateUrl: 'public/tpl/course/content/course1Exercises/course1Exercises.tpl.html',
+            templateUrl: '/tpl/course/content/course1Exercises/course1Exercises.tpl.html',
             controller: 'course1ExercisesCtrl',
             authenticate: true
         })
