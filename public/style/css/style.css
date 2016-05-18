@@ -1,0 +1,315 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
+
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+html {
+  height: 100% !important;
+}
+
+.uiView {
+  min-height: 700px;
+}
+
+.top_wrapper {
+  margin-bottom: 20px;
+  color: white;
+  background-image: linear-gradient(315deg, #3e5062 10%, #203040 90%);
+}
+
+.top_wrapper .indexContainer {
+  padding-top: 0;
+  background: transparent !important;
+}
+
+.top_wrapper .indexContainer h1 {
+  margin-bottom: 40px;
+}
+
+.top_wrapper .indexContainer img {
+  width: 500px;
+  height: 300px;
+}
+
+.top_wrapper_home {
+  height: 590px !important;
+}
+
+.navbar #navlogo {
+  width: 70px;
+  height: 50px;
+  margin-top: 8px;
+  margin-left: 50px;
+  padding-bottom: 8px;
+  background-image: url("/style/images/Background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90px 70px;
+}
+
+.navbar .navbar-brand {
+  padding: 0;
+}
+
+.navbar .container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.navbar .profileToolbar {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.navbar li {
+  cursor: pointer;
+}
+
+.navbar img {
+  width: 50px;
+  height: 50px;
+  margin-right: 7px;
+  border-radius: 30px;
+}
+
+.navbar .nav {
+  font-size: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.navbar .nav .signin {
+  margin-top: 7px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-transform: uppercase;
+  border: 1px solid white;
+  border-radius: 50px;
+}
+
+.navbar .open a {
+  background-color: transparent !important;
+}
+
+.navbar .dropdown-menu {
+  opacity: .9;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.navbar .dropdown-menu li:hover {
+  background-color: #d3d3d3;
+}
+
+.navbar.main {
+  margin-bottom: 0;
+  padding-top: 8px;
+  border-bottom: none;
+  background-color: transparent;
+}
+
+#article {
+  margin-bottom: 30px;
+}
+
+#article .text-muted {
+  margin-top: 10px;
+}
+
+#article .articleDescription {
+  padding-top: 80px;
+}
+
+#startButtonCourse {
+  margin-bottom: 30px;
+}
+
+.bottom {
+  text-align: center;
+  background-color: #373737;
+}
+
+.bottom .container {
+  min-height: 150px;
+  background-color: #373737;
+}
+
+.bottom .container h3 {
+  color: #999;
+}
+
+.bottom .container p {
+  color: #666;
+}
+
+footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+}
+
+.profileContent {
+  width: 1000px;
+  margin-top: 50px;
+  margin-left: 24% !important;
+  padding: 20px !important;
+  border: 1px solid black;
+  border-radius: 30px;
+}
+
+.profileContent .profilePicture {
+  width: 150px;
+  height: 150px;
+}
+
+.row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.aboutTitle {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.aboutTitle h1 {
+  font-size: 45px;
+}
+
+.aboutTitle img {
+  width: 200px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: -15px;
+}
+
+.aboutTitle p {
+  margin-left: -17px;
+}
+
+.aboutTitle h4 {
+  margin-left: -17px;
+}
+
+.aboutDescription {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.NextPage1 {
+  margin-top: 200px;
+  margin-bottom: 15px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.links {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.imageCourseIntro img {
+  width: 500px;
+  height: 400px;
+}
+
+#textarea1 {
+  width: 400px;
+  height: 350px;
+  font-size: 16px;
+  padding: 10px;
+  resize: none;
+  margin-top: 20px;
+  border: 1px solid darkgray;
+}
+
+#divTextArea1 {
+  width: 600px;
+  height: 350px;
+  font-size: 16px;
+  padding: 10px;
+  resize: none;
+  margin-top: 20px;
+  border: 1px solid darkgray;
+}
+
+.form1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form1 input {
+  margin-left: 30px !important;
+}
+
+#button1 {
+  margin-left: 10px;
+}
+
+.course1ExercisesLink {
+  margin-top: 100px;
+}
+
+@media only screen and (max-width: 1400px) {
+  .top_wrapper {
+    height: 80px;
+  }
+  .top_wrapper .indexContainer {
+    padding: 0;
+  }
+  .top_wrapper .indexContainer h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: white;
+  }
+  .top_wrapper .indexContainer img {
+    width: 400px;
+    height: 250px;
+  }
+  .NextPage1 {
+    margin-top: 100px;
+    margin-bottom: 20px;
+  }
+  .top_wrapper_home {
+    height: 452px !important;
+  }
+  .dropdown-menu {
+    margin-right: 8px !important;
+  }
+  .profileContent {
+    margin-left: 13% !important;
+  }
+  footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 275px;
+  }
+}
