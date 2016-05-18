@@ -21,5 +21,8 @@ app.use(express.static(__dirname + '/public'));
 
 app.use('/api', authCheck, require('./server/user/route').init());
 
-app.listen(3001);
+app.listen((process.env.PORT || 3001), function(){
+  console.log('listening on *:5000');
+});
+
 console.log("Listening 3001");
