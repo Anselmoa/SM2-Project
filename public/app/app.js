@@ -16,7 +16,7 @@ angular
 .controller('profileCtrl', ['$scope', '$rootScope', '$http', '$location',
     function($scope, $rootScope, $http, $location) {
         $rootScope.location = $location.path();
-        $http.get('http://localhost:3001/api/users/' + $rootScope.profile.identities[0].user_id)
+        $http.get('/api/users/' + $rootScope.profile.identities[0].user_id)
             .success(function(data, status, header, config) {
                 $scope.userPicture = $rootScope.profile.picture;
                 $scope.userNickname = $rootScope.profile.nickname;
@@ -36,9 +36,9 @@ angular
                 isRegistedCourse: true
             };
 
-            $http.put('http://localhost:3001/api/users/' + $rootScope.profile.identities[0].user_id, updatedUser)
+            $http.put('/api/users/' + $rootScope.profile.identities[0].user_id, updatedUser)
                 .success(function(data, status, header, config) {
-                    $http.get('http://localhost:3001/api/users/' + $rootScope.profile.identities[0].user_id)
+                    $http.get('/api/users/' + $rootScope.profile.identities[0].user_id)
                         .success(function(data, status, header, config) {
                             store.set('isRegistedCourse', data[0].isRegistedCourse);
                             $rootScope.isRegistedCourse = store.get('isRegistedCourse');
